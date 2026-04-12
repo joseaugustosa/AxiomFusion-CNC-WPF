@@ -8,8 +8,8 @@ public interface IController : IDisposable
     // ── Eventos (equivalentes aos pyqtSignal do Python) ──────────────────
     event EventHandler<bool>             ConnectionChanged;
     event EventHandler<MachineSnapshot>  StatusUpdated;
-    event EventHandler<AlarmEventArgs>   AlarmTriggered;
-    event EventHandler<ErrorEventArgs>   ErrorReceived;
+    event EventHandler<GrblAlarmEventArgs>   AlarmTriggered;
+    event EventHandler<GrblErrorEventArgs>   ErrorReceived;
     event EventHandler<int>              LineExecuted;
     event EventHandler                   ProgramFinished;
     event EventHandler<string>           LogMessage;
@@ -52,5 +52,5 @@ public interface IController : IDisposable
     void UpdateMCodes(MCodes codes);
 }
 
-public record AlarmEventArgs(int Code, string Description);
-public record ErrorEventArgs(int Code, string Description);
+public record GrblAlarmEventArgs(int Code, string Description);
+public record GrblErrorEventArgs(int Code, string Description);

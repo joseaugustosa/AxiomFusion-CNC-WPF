@@ -13,8 +13,8 @@ public abstract class ControllerBase : IController
     // ── Eventos ───────────────────────────────────────────────────────────
     public event EventHandler<bool>?            ConnectionChanged;
     public event EventHandler<MachineSnapshot>? StatusUpdated;
-    public event EventHandler<AlarmEventArgs>?  AlarmTriggered;
-    public event EventHandler<ErrorEventArgs>?  ErrorReceived;
+    public event EventHandler<GrblAlarmEventArgs>?  AlarmTriggered;
+    public event EventHandler<GrblErrorEventArgs>?  ErrorReceived;
     public event EventHandler<int>?             LineExecuted;
     public event EventHandler?                  ProgramFinished;
     public event EventHandler<string>?          LogMessage;
@@ -60,10 +60,10 @@ public abstract class ControllerBase : IController
         => App.Dispatch(() => StatusUpdated?.Invoke(this, _state.GetSnapshot()));
     protected void RaiseAlarm(int code)
         => App.Dispatch(() => AlarmTriggered?.Invoke(this,
-               new AlarmEventArgs(code, GrblConstants.GetAlarm(code))));
+               new GrblAlarmEventArgs(code, GrblConstants.GetAlarm(code))));
     protected void RaiseError(int code)
         => App.Dispatch(() => ErrorReceived?.Invoke(this,
-               new ErrorEventArgs(code, GrblConstants.GetError(code))));
+               new GrblErrorEventArgs(code, GrblConstants.GetError(code))));
     protected void RaiseLineExecuted(int idx)
         => App.Dispatch(() => LineExecuted?.Invoke(this, idx));
     protected void RaiseProgramFinished()

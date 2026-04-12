@@ -8,7 +8,6 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>AxiomFusion.CncController</AssemblyName>
     <RootNamespace>AxiomFusion.CncController</RootNamespace>
-    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 

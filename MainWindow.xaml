@@ -67,10 +67,12 @@
                 <TextBlock x:Name="TbPort" Text="" Foreground="#6c7086"/>
             </StatusBarItem>
             <StatusBarItem HorizontalAlignment="Right">
-                <TextBlock Text="{Binding CurrentLine, StringFormat=Linha {0}}"
-                           Foreground="#6c7086"/>
-                <TextBlock Text="{Binding TotalLines, StringFormat=' / {0}'}"
-                           Foreground="#6c7086"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding CurrentLine, StringFormat=Linha {0}}"
+                               Foreground="#6c7086"/>
+                    <TextBlock Text="{Binding TotalLines, StringFormat=' / {0}'}"
+                               Foreground="#6c7086"/>
+                </StackPanel>
             </StatusBarItem>
         </StatusBar>
 

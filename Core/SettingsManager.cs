@@ -7,7 +7,7 @@ public class SettingsManager
 {
     private readonly string _path;
     private JsonObject _data;
-    private readonly Lock _lock = new();
+    private readonly object _lock = new();
 
     private static readonly JsonObject Defaults = new()
     {

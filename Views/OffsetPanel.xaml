@@ -26,7 +26,7 @@
             <Label Content="Zerar Eixo:" Style="{StaticResource SmallLabel}" Margin="4,0"/>
             <UniformGrid Rows="2" Columns="2" Margin="4,2">
                 <Button Content="Zero X" Style="{StaticResource SmallButton}" Margin="2"
-                        Command="{Binding SetWcsZeroCommand}" CommandParameter="{Binding Tag, ElementName=RbG54, Converter={StaticResource WcsAxisConverter}, ConverterParameter=X}"/>
+                        Tag="X" Click="ZeroAxis_Click"/>
                 <Button Content="Zero Y" Style="{StaticResource SmallButton}" Margin="2"
                         Tag="Y" Click="ZeroAxis_Click"/>
                 <Button Content="Zero Z" Style="{StaticResource SmallButton}" Margin="2"

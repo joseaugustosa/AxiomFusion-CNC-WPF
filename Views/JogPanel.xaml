@@ -4,7 +4,7 @@
     <GroupBox Header="Jog Manual" Style="{StaticResource DarkGroupBox}">
         <StackPanel>
             <!-- XY cross -->
-            <Grid Width="180" Height="140" Margin="auto,4">
+            <Grid Width="180" Height="140" Margin="0,4" HorizontalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition/><RowDefinition/><RowDefinition/>
                 </Grid.RowDefinitions>

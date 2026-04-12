@@ -5,7 +5,7 @@ namespace AxiomFusion.CncController.Core;
 /// <summary>Estado partilhado da máquina — thread-safe.</summary>
 public class MachineState
 {
-    private readonly Lock _lock = new();
+    private readonly object _lock = new();
 
     // ── Posições ──────────────────────────────────────────────────────────
     public AxisPos WorkPos    { get; private set; } = new();

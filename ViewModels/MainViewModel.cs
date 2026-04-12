@@ -308,14 +308,14 @@ public partial class MainViewModel : ObservableObject
         StatusColor   = color;
     }
 
-    private void OnAlarm(object? _, AlarmEventArgs e)
+    private void OnAlarm(object? _, GrblAlarmEventArgs e)
     {
         StatusMessage = $"ALARME {e.Code}: {e.Description}";
         MessageBox.Show(e.Description, $"ALARME {e.Code}",
             MessageBoxButton.OK, MessageBoxImage.Warning);
     }
 
-    private void OnError(object? _, ErrorEventArgs e)
+    private void OnError(object? _, GrblErrorEventArgs e)
     {
         StatusMessage = $"Erro {e.Code}: {e.Description}";
     }

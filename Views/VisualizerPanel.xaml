@@ -34,13 +34,33 @@
             <h:GridLinesVisual3D x:Name="Grid"
                                  Width="200" Length="200"
                                  MajorDistance="50" MinorDistance="10"
-                                 Thickness="0.3"
-                                 Material="{h:PhongMaterial Brush=#22444466}"/>
+                                 Thickness="0.3">
+                <h:GridLinesVisual3D.Material>
+                    <DiffuseMaterial>
+                        <DiffuseMaterial.Brush>
+                            <SolidColorBrush Color="#444466" Opacity="0.15"/>
+                        </DiffuseMaterial.Brush>
+                    </DiffuseMaterial>
+                </h:GridLinesVisual3D.Material>
+            </h:GridLinesVisual3D>
 
             <!-- Tubo (gerado no code-behind) -->
-            <h:MeshGeometryVisual3D x:Name="TubeVisual"
-                                    Material="{h:PhongMaterial Brush=#446688aa}"
-                                    BackMaterial="{h:PhongMaterial Brush=#22446688}"/>
+            <h:MeshGeometryVisual3D x:Name="TubeVisual">
+                <h:MeshGeometryVisual3D.Material>
+                    <DiffuseMaterial>
+                        <DiffuseMaterial.Brush>
+                            <SolidColorBrush Color="#6688aa" Opacity="0.4"/>
+                        </DiffuseMaterial.Brush>
+                    </DiffuseMaterial>
+                </h:MeshGeometryVisual3D.Material>
+                <h:MeshGeometryVisual3D.BackMaterial>
+                    <DiffuseMaterial>
+                        <DiffuseMaterial.Brush>
+                            <SolidColorBrush Color="#446688" Opacity="0.15"/>
+                        </DiffuseMaterial.Brush>
+                    </DiffuseMaterial>
+                </h:MeshGeometryVisual3D.BackMaterial>
+            </h:MeshGeometryVisual3D>
 
             <!-- Toolpath — linhas coloridas -->
             <h:LinesVisual3D x:Name="PathRapid"
