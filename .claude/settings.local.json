@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-VMSwitch)",
+      "PowerShell(Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V)",
+      "Bash(Start-Process \"c:\\\\Users\\\\Utilizador\\\\github-repos\\\\CNC_drf\\\\CNC_Drf\\\\bin\\\\Debug\\\\net8.0-windows\\\\CNC_Drf.exe\")"
+    ]
+  }
+}
